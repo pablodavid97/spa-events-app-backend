@@ -1,4 +1,4 @@
-const { get, replace, remove } = require('../../data/event');
+const { get, replace, remove } = require('../util/event');
 const {
     isValidText,
     isValidDate,

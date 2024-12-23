@@ -1,9 +1,9 @@
-const { getAll, add } = require('../../data/event');
+const { getAll, add } = require('../util/event');
 const {
     isValidText,
     isValidDate,
     isValidImageUrl,
-} = require('../../util/validation');
+} = require('../util/validation');
 
 module.exports = async (req, res) => {
     if (req.method === 'GET') {

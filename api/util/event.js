@@ -1,7 +1,7 @@
 const fs = require('node:fs/promises');
 const path = require('path');
 const { v4: generateId } = require('uuid');
-const { NotFoundError } = require('../api/util/errors');
+const { NotFoundError } = require('./errors');
 
 async function readData() {
     const data = await fs.readFile(
