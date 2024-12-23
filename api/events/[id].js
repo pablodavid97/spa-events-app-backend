@@ -3,7 +3,7 @@ const {
     isValidText,
     isValidDate,
     isValidImageUrl,
-} = require('../../util/validation');
+} = require('../util/validation');
 
 module.exports = async (req, res) => {
     const { id } = req.query;
