@@ -8,6 +8,16 @@ const {
 module.exports = async (req, res) => {
     const { id } = req.query;
 
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+        // Preflight request
+        res.status(204).end();
+        return;
+    }
+
     if (req.method === 'GET') {
         try {
             const event = await get(id);

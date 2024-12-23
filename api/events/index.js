@@ -6,6 +6,16 @@ const {
 } = require('../util/validation');
 
 module.exports = async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+        // Preflight request
+        res.status(204).end();
+        return;
+    }
+
     if (req.method === 'GET') {
         try {
             const events = await getAll();
